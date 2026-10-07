@@ -13,12 +13,13 @@ YRB.LISTINGS = [
     specs: {
       "Configuration": "12S8P",
       "Cell Type": "26650 LiFePO4 (A123)",
-      "Nominal Voltage": "~39.6V",
-      "Capacity": "60Ah (measured)",
-      "Source": "TTC transit bus pack (16S, 660V nominal)"
+      "Nominal Voltage": "40V",
+      "Capacity": "18–19Ah measured (20Ah original rating)",
+      "Source": "TTC transit bus pack (16S, ~640V nominal)"
     },
     description: "Pulled from a TTC transit bus battery pack, this 12S8P module has been capacity-tested and balance-checked across all 12 series groups. Ready to drop into a solar storage bank.",
-    image: "images/placeholders/module-diagram.svg"
+    image: "images/products/a123-module-photo.jpg",
+    imageAlt: "BAE Systems A123 12S8P module, 40V/225A rating label visible"
   },
   {
     id: "a123-12s8p-batch2",
@@ -32,12 +33,13 @@ YRB.LISTINGS = [
     specs: {
       "Configuration": "12S8P",
       "Cell Type": "26650 LiFePO4 (A123)",
-      "Nominal Voltage": "~39.6V",
-      "Capacity": "Not yet capacity-tested",
-      "Source": "TTC transit bus pack (16S, 660V nominal)"
+      "Nominal Voltage": "40V",
+      "Capacity": "Not yet capacity-tested (20Ah original rating)",
+      "Source": "TTC transit bus pack (16S, ~640V nominal)"
     },
     description: "Visually inspected and voltage-checked but not yet capacity-tested — priced accordingly. Great if you're comfortable testing/grading cells yourself.",
-    image: "images/placeholders/module-diagram.svg"
+    image: "images/products/a123-module-photo.jpg",
+    imageAlt: "BAE Systems A123 12S8P module, 40V/225A rating label visible"
   },
   {
     id: "26650-loose-cell",
@@ -51,12 +53,13 @@ YRB.LISTINGS = [
     specs: {
       "Configuration": "Single cell",
       "Cell Type": "26650 LiFePO4 (A123)",
-      "Nominal Voltage": "3.3V nominal / 3.65V charged",
-      "Capacity": "2.3Ah (measured)",
+      "Nominal Voltage": "3.3V nominal",
+      "Capacity": "2.6Ah rated; individually tested cells typically measure a little under that",
       "Source": "TTC transit bus pack module teardown"
     },
     description: "Individually capacity-tested loose cells pulled down from modules. Good for topping up an existing bank or small parallel builds.",
-    image: "images/placeholders/icon-cells.svg"
+    image: "images/products/a123-cell-photo.jpg",
+    imageAlt: "A123/Lithium Werks ANR26650M1B cell with manufacturer spec label: 3.3V, 2.6Ah, 8.58Wh"
   },
   {
     id: "ttc-bms-board",
