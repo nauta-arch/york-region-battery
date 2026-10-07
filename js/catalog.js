@@ -20,7 +20,7 @@ YRB.catalog = {
 
     return `
       <article class="listing-card" data-category="${listing.category}" data-condition="${listing.condition}">
-        <img class="listing-card__image" src="${listing.image}" alt="${listing.name}" loading="lazy">
+        <img class="listing-card__image" src="${listing.image}" alt="" loading="lazy">
         <div class="listing-card__body">
           <span class="${badgeClass}">${badgeLabel}</span>
           <h3 class="listing-card__title">${listing.name}</h3>
