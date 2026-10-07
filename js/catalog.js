@@ -2,11 +2,12 @@ window.YRB = window.YRB || {};
 
 YRB.catalog = {
   filterListings(listings, filters) {
-    const { category = 'all', condition = 'all' } = filters || {};
+    const { category = 'all', condition = 'all', source = 'all' } = filters || {};
     return listings.filter((item) => {
       const categoryMatches = category === 'all' || item.category === category;
       const conditionMatches = condition === 'all' || item.condition === condition;
-      return categoryMatches && conditionMatches;
+      const sourceMatches = source === 'all' || item.source === source;
+      return categoryMatches && conditionMatches && sourceMatches;
     });
   },
 
