@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | York Region Battery</title>
+  <meta name="description" content="Browse tested and as-is salvaged A123 LiFePO4 modules, loose cells, BMS boards, and hardware pulled from TTC transit bus battery packs.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="brand" href="index.html">
+        <img class="brand__mark" src="images/placeholders/brand-mark.svg" alt="" width="28" height="28">
+        <span class="brand__name">York Region Battery</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html">Home</a>
+        <a href="shop.html" aria-current="page">Shop</a>
+        <a href="about.html">About &amp; FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-section">
+      <h1>Shop</h1>
+      <p>Filter by category or condition. "Tested &amp; Graded" means capacity- and balance-checked; "As-Is Salvage" means visually inspected only and priced accordingly.</p>
+
+      <div class="filter-bar">
+        <label>
+          Category
+          <select id="filter-category">
+            <option value="all">All Categories</option>
+            <option value="modules">Modules</option>
+            <option value="cells">Loose Cells</option>
+            <option value="bms">BMS &amp; Electrical</option>
+            <option value="hardware">Hardware</option>
+          </select>
+        </label>
+        <label>
+          Condition
+          <select id="filter-condition">
+            <option value="all">All Conditions</option>
+            <option value="tested">Tested &amp; Graded</option>
+            <option value="as-is">As-Is Salvage</option>
+          </select>
+        </label>
+        <button type="button" id="filter-reset" class="button button--secondary">Reset Filters</button>
+      </div>
+
+      <div id="catalog-grid" class="catalog-grid"></div>
+      <p id="catalog-empty" class="catalog-empty" hidden>No listings match those filters right now — try a different combination or check back soon.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div class="site-footer__brand">
+        <strong>York Region Battery</strong>
+        <p>Salvaged TTC transit battery parts, tested and sold for solar &amp; off-grid use.<br>Serving York Region, Ontario.</p>
+      </div>
+      <div class="site-footer__contact">
+        <a href="mailto:lucasnauta@gmail.com">lucasnauta@gmail.com</a>
+        <a href="tel:+14378980642">437-898-0642 (call or text)</a>
+      </div>
+    </div>
+    <div class="container site-footer__legal">
+      <p>York Region Battery is an independent salvage reseller and is not affiliated with, endorsed by, or sponsored by the Toronto Transit Commission (TTC).</p>
+    </div>
+  </footer>
+
+  <script src="js/listings.js"></script>
+  <script src="js/format.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/shop-page.js"></script>
+</body>
+</html>
