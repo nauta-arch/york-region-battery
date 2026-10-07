@@ -4,6 +4,7 @@ YRB.LISTINGS = [
   {
     id: "a123-12s8p-batch1",
     category: "modules",
+    source: "ttc",
     name: "A123 12S8P Module — Batch 1",
     price: 85.00,
     currency: "CAD",
@@ -22,6 +23,7 @@ YRB.LISTINGS = [
   {
     id: "a123-12s8p-batch2",
     category: "modules",
+    source: "ttc",
     name: "A123 12S8P Module — Batch 2 (As-Is)",
     price: 55.00,
     currency: "CAD",
@@ -40,6 +42,7 @@ YRB.LISTINGS = [
   {
     id: "26650-loose-cell",
     category: "cells",
+    source: "ttc",
     name: "A123 26650 LiFePO4 Cell (Single)",
     price: 6.00,
     currency: "CAD",
@@ -58,6 +61,7 @@ YRB.LISTINGS = [
   {
     id: "ttc-bms-board",
     category: "bms",
+    source: "ttc",
     name: "TTC Pack BMS Board (12S)",
     price: 40.00,
     currency: "CAD",
@@ -76,6 +80,7 @@ YRB.LISTINGS = [
   {
     id: "bus-bar-connector-set",
     category: "hardware",
+    source: "ttc",
     name: "Bus Bar & Connector Set",
     price: 15.00,
     currency: "CAD",
@@ -90,5 +95,43 @@ YRB.LISTINGS = [
     },
     description: "Cleaned and visually inspected interconnect hardware pulled from module teardown. Sold as-is — good for custom pack building.",
     image: "images/placeholders/icon-hardware.svg"
+  },
+  {
+    id: "nissan-leaf-module",
+    category: "modules",
+    source: "leaf",
+    name: "Nissan Leaf Battery Module",
+    price: 25.00,
+    currency: "CAD",
+    qtyAvailable: 4,
+    condition: "as-is",
+    specs: {
+      "Configuration": "2S2P (4 cells)",
+      "Cell Type": "Laminated pouch, LMO/NMC blend (Nissan/AESC)",
+      "Nominal Voltage": "~7.4V",
+      "Capacity": "~33Ah (typical for this module type — pending our own verification)",
+      "Source": "Nissan Leaf EV battery pack"
+    },
+    description: "Pulled from a Nissan Leaf EV battery pack. Not yet capacity-tested on our end — specs shown are typical for this module type, not measured. Different chemistry than our LiFePO4 modules: check your charger/BMS voltage limits before mixing into an existing LiFePO4 bank.",
+    image: "images/placeholders/leaf-module-diagram.svg"
+  },
+  {
+    id: "chevy-volt-module",
+    category: "modules",
+    source: "volt",
+    name: "Chevy Volt Battery Module (Gen 1)",
+    price: 30.00,
+    currency: "CAD",
+    qtyAvailable: 4,
+    condition: "as-is",
+    specs: {
+      "Configuration": "3S (3 cells in series)",
+      "Cell Type": "Prismatic pouch, NMC (LG Chem)",
+      "Nominal Voltage": "~10.8–12.6V",
+      "Capacity": "~15Ah (typical for this module type — pending our own verification)",
+      "Source": "Chevrolet Volt EV battery pack (Gen 1)"
+    },
+    description: "Pulled from a Gen 1 Chevy Volt EV battery pack. Not yet capacity-tested on our end — specs shown are typical for this module type, not measured. Different chemistry than our LiFePO4 modules: check your charger/BMS voltage limits before mixing into an existing LiFePO4 bank.",
+    image: "images/placeholders/volt-module-diagram.svg"
   }
 ];
