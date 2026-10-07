@@ -136,5 +136,26 @@ YRB.LISTINGS = [
     },
     description: "Pulled from a Gen 1 Chevy Volt EV battery pack. Not yet capacity-tested on our end — specs shown are typical for this module type, not measured. Different chemistry than our LiFePO4 modules: check your charger/BMS voltage limits before mixing into an existing LiFePO4 bank.",
     image: "images/placeholders/volt-module-diagram.svg"
+  },
+  {
+    id: "ttc-full-pack-16s",
+    category: "packs",
+    source: "ttc",
+    name: "Full TTC Battery Pack — 16 Modules (16S)",
+    price: 1000.00,
+    currency: "CAD",
+    qtyAvailable: 12,
+    condition: "tested",
+    specs: {
+      "Configuration": "16S (16 × 12S8P modules in series)",
+      "Cell Type": "26650 LiFePO4 (A123/Lithium Werks ANR26650M1B)",
+      "Nominal Voltage": "~640V (16 × 40V modules)",
+      "Capacity": "18–19Ah (modules test at 18–19Ah against a 20Ah original rating)",
+      "Includes": "Complete pack case, internal bus bars/wiring, high-voltage connectors, integrated cooling fans",
+      "Source": "TTC transit bus pack (complete, as removed)"
+    },
+    description: "The complete 16-module pack as pulled from the bus — full case, internal wiring, high-voltage connectors, and integrated cooling fans included. We've tested this pack as a working assembled unit. If you want the whole ~640V string instead of building one up from individual modules, this is it.",
+    image: "images/products/ttc-full-pack-photo.jpg",
+    imageAlt: "Open TTC battery pack case showing all 16 A123 modules installed in the rack"
   }
 ];
