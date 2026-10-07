@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Diagram of a Nissan Leaf 2S2P battery module">
+  <rect x="100" y="60" width="200" height="180" rx="12" fill="none" stroke="#f2871b" stroke-width="3"/>
+  <g fill="#f2871b">
+    <circle cx="160" cy="110" r="14"/><circle cx="240" cy="110" r="14"/>
+    <circle cx="160" cy="190" r="14"/><circle cx="240" cy="190" r="14"/>
+  </g>
+  <text x="200" y="265" fill="#b3a593" font-size="13" font-family="sans-serif" text-anchor="middle">2S2P &#183; 4 pouch cells (LMO/NMC)</text>
+</svg>

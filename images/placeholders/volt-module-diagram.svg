@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" role="img" aria-label="Diagram of a Chevy Volt 3-cell-in-series battery module">
+  <rect x="130" y="40" width="140" height="220" rx="12" fill="none" stroke="#f2871b" stroke-width="3"/>
+  <g fill="#f2871b">
+    <circle cx="200" cy="90" r="14"/>
+    <circle cx="200" cy="150" r="14"/>
+    <circle cx="200" cy="210" r="14"/>
+  </g>
+  <text x="200" y="275" fill="#b3a593" font-size="13" font-family="sans-serif" text-anchor="middle">3S &#183; NMC prismatic pouch (LG Chem)</text>
+</svg>
