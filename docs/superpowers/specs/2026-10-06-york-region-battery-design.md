@@ -1,7 +1,7 @@
 # York Region Battery — Website Design
 
 **Date:** 2026-10-06
-**Status:** Approved by user, pending spec review sign-off
+**Status:** Approved
 
 ## Overview
 
@@ -118,13 +118,15 @@ hardware.
 - **Shop (`shop.html`)** — full catalog grid, client-side filter by category
   and by condition (Tested / As-Is). Each card shows name, price, qty,
   condition badge, key specs, and expands (inline, no page nav) to show full
-  description + "Email about this listing" mailto action.
+  description + "Email about this listing" and "Call/text about this
+  listing" actions (`mailto:`/`tel:` links, see Contact / Buy Flow).
 - **About/FAQ (`about.html`)** — what A123/LiFePO4 cells are, why TTC buses
   specifically (provenance/credibility), how the testing & grading process
   works, safety notes (handling/storage of LiFePO4), shipping & local pickup
   policy, return/dispute policy.
 - **Contact (`contact.html`)** — general inquiry via mailto link (prefilled
-  subject), business contact info, service area (York Region, Ontario).
+  subject), clickable phone number for call/text, service area (York
+  Region, Ontario).
 
 No listing gets its own URL/page — detail is an inline expand on the Shop
 page. This keeps the site to 4 files and avoids generating/maintaining a page
@@ -132,15 +134,24 @@ per listing.
 
 ## Contact / Buy Flow
 
-No backend. Every "buy" action is a `mailto:` link prefilled with a subject
-line identifying the listing (e.g. `mailto:sales@yorkregionbattery.ca?subject=Inquiry:%20A123%2012S8P%20Module%20Batch%201`).
-The owner replies manually and arranges payment (e-transfer/PayPal/pickup)
-outside the site.
+No backend, no form-submission service. Every "buy" action on a listing, and
+the Contact page, offer two direct actions:
 
-This was chosen over a real form specifically to avoid needing any backend,
-API keys, or secrets for an MVP. A clean future upgrade path (noted but not
-built now) is a Cloudflare Pages Function + an email-sending API if the
-owner later wants submissions logged rather than just emailed.
+- **Email**: `mailto:lucasnauta@gmail.com` link prefilled with a subject
+  line identifying the listing (e.g.
+  `mailto:lucasnauta@gmail.com?subject=Inquiry:%20A123%2012S8P%20Module%20Batch%201`).
+- **Call/Text**: `tel:+14378980642` link, displayed as a clickable phone
+  number (`437-898-0642`), so mobile visitors can tap to call or text
+  directly.
+
+The owner replies manually and arranges payment (e-transfer/PayPal/pickup)
+outside the site. This avoids needing any backend, third-party form service,
+or API keys/secrets for an MVP.
+
+Note: the phone number is a personal cell number displayed publicly on the
+site, which means it's exposed to scrapers/spam callers over time — accepted
+tradeoff for a local small business; can be swapped for a dedicated business
+line (e.g. Google Voice) later without any site structure changes.
 
 ## Visual Design (professional / established-business bar)
 
@@ -152,8 +163,8 @@ owner later wants submissions logged rather than just emailed.
 - Consistent wordmark/logo treatment for "York Region Battery" (text-based
   lockup is sufficient — no fake "since 20XX" claims).
 - Real footer with: business name, service area (York Region, ON), contact
-  email, and a clear disclaimer that the business is independent and not
-  affiliated with or endorsed by the TTC.
+  email and phone, and a clear disclaimer that the business is independent
+  and not affiliated with or endorsed by the TTC.
 - Favicon, consistent spacing/typography system, no lorem-ipsum left in the
   shipped site.
 - Trust is built through **honesty and clarity** (clear condition badges,
@@ -177,19 +188,11 @@ filtering/rendering). Manual verification before calling this done:
 - All pages load and nav works on desktop and mobile widths
 - Catalog filter (category + condition) works correctly against
   `listings.js` data
-- Every listing's mailto link has correct, URL-encoded subject text
+- Every listing's mailto link has correct, URL-encoded subject text, and
+  every tel link dials/texts the correct number
 - No broken internal links/images
 - Lighthouse/basic accessibility pass (contrast, alt text on
   placeholder graphics)
-
-## Open Item for Owner
-
-The mailto contact flow needs a real, working email address. This spec
-placeholders `sales@yorkregionbattery.ca`, which only works if email is
-configured for that domain (e.g. via Cloudflare Email Routing, which is free
-and simple to set up, or a forward to an existing inbox). **Confirm the
-actual address to use before implementation**, or set up Cloudflare Email
-Routing for the domain if you want a domain-matching address.
 
 ## Deployment
 
