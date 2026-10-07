@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="York Region Battery inspection stamp: salvaged and graded">
+  <defs>
+    <path id="stampTopArc" d="M 30 100 A 70 70 0 0 1 170 100" fill="none"/>
+    <path id="stampBottomArc" d="M 170 110 A 70 70 0 0 1 30 110" fill="none"/>
+  </defs>
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#0a0806" stroke-width="4"/>
+  <circle cx="100" cy="100" r="80" fill="none" stroke="#f2871b" stroke-width="2"/>
+  <text font-family="sans-serif" font-size="13" font-weight="700" letter-spacing="2" fill="#f2ece1">
+    <textPath href="#stampTopArc" startOffset="50%" text-anchor="middle">YORK REGION BATTERY</textPath>
+  </text>
+  <text font-family="sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#f2ece1">
+    <textPath href="#stampBottomArc" startOffset="50%" text-anchor="middle">SALVAGED · GRADED</textPath>
+  </text>
+  <rect x="78" y="88" width="30" height="18" rx="2" fill="#f2871b"/>
+  <rect x="108" y="93" width="4" height="8" fill="#f2871b"/>
+  <path d="M96 90 L88 100 L93 100 L90 108 L100 96 L95 96 Z" fill="#0a0806"/>
+</svg>
