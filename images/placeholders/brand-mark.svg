@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="York Region Battery mark">
-  <rect x="6" y="15" width="30" height="18" rx="3" fill="#3dd6b0"/>
-  <rect x="36" y="21" width="4" height="6" fill="#3dd6b0"/>
-  <path d="M23 18 L15 27 L21 27 L18 33 L28 22 L22 22 Z" fill="#0e1113"/>
+  <rect x="6" y="15" width="30" height="18" rx="3" fill="#f2871b"/>
+  <rect x="36" y="21" width="4" height="6" fill="#f2871b"/>
+  <path d="M23 18 L15 27 L21 27 L18 33 L28 22 L22 22 Z" fill="#0a0806"/>
 </svg>

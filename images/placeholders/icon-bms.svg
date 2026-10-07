@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Icon of a battery management system board">
-  <rect x="6" y="8" width="36" height="32" rx="3" fill="none" stroke="#3dd6b0" stroke-width="3"/>
-  <rect x="16" y="16" width="8" height="8" fill="#3dd6b0"/>
-  <line x1="6" y1="24" x2="16" y2="24" stroke="#3dd6b0" stroke-width="2"/>
-  <line x1="24" y1="20" x2="36" y2="20" stroke="#3dd6b0" stroke-width="2"/>
-  <line x1="24" y1="28" x2="36" y2="28" stroke="#3dd6b0" stroke-width="2"/>
-  <circle cx="36" cy="14" r="2" fill="#3dd6b0"/>
+  <rect x="6" y="8" width="36" height="32" rx="3" fill="none" stroke="#f2871b" stroke-width="3"/>
+  <rect x="16" y="16" width="8" height="8" fill="#f2871b"/>
+  <line x1="6" y1="24" x2="16" y2="24" stroke="#f2871b" stroke-width="2"/>
+  <line x1="24" y1="20" x2="36" y2="20" stroke="#f2871b" stroke-width="2"/>
+  <line x1="24" y1="28" x2="36" y2="28" stroke="#f2871b" stroke-width="2"/>
+  <circle cx="36" cy="14" r="2" fill="#f2871b"/>
 </svg>
