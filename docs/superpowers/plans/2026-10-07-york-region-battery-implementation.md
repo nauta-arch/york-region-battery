@@ -1017,7 +1017,7 @@ git commit -m "Add shop page with category/condition filtering"
 - [ ] **Step 2: Verify required sections are present**
 
 Run: `grep -c "<h2>" about.html`
-Expected: `5`
+Expected: `6`
 
 - [ ] **Step 3: Commit**
 
