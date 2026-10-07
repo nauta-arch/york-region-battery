@@ -58,7 +58,9 @@ p { margin: 0 0 var(--space-sm); }
 .brand { display: flex; align-items: center; gap: var(--space-xs); color: var(--color-text); }
 .brand:hover { text-decoration: none; }
 .brand__mark { width: 28px; height: 28px; }
+.brand__text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand__name { font-family: var(--font-heading); font-weight: 600; font-size: 1.1rem; letter-spacing: 0.02em; text-transform: uppercase; }
+.brand__tagline { font-family: var(--font-body); font-size: 0.65rem; font-weight: 400; color: var(--color-text-muted); text-transform: none; letter-spacing: 0; }
 .site-nav { display: flex; gap: var(--space-md); }
 .site-nav a { color: var(--color-text-muted); font-weight: 500; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--color-accent); }
