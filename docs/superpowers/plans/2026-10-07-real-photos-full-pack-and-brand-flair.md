@@ -347,7 +347,7 @@ Replace with:
         <img class="brand__mark" src="images/placeholders/brand-mark.svg" alt="" width="28" height="28">
         <span class="brand__text">
           <span class="brand__name">York Region Battery</span>
-          <span class="brand__tagline">Salvaged Power. Built to Last.</span>
+          <span class="brand__tagline">Dead Buses. Live Cells.</span>
         </span>
       </a>
 ```
@@ -357,7 +357,13 @@ Apply this identically in all three files. (`about.html` is intentionally NOT to
 - [ ] **Step 3: Verify**
 
 Run: `grep -c "brand__tagline" index.html shop.html contact.html css/style.css`
-Expected: `1` for each of the 4 files (one tagline span per HTML page, one CSS rule definition — `grep -c` counts matching lines per file when given multiple files).
+Expected (with multiple file arguments, `grep -c` prefixes each line with the filename):
+```
+index.html:1
+shop.html:1
+contact.html:1
+css/style.css:1
+```
 
 - [ ] **Step 4: Commit**
 
@@ -368,16 +374,25 @@ git commit -m "Add brand tagline to header on Home, Shop, and Contact pages"
 
 ---
 
-### Task 4: Hero tagline, inspection-stamp mark, and footer/section texture
+### Task 4: Bold hero treatment, inspection-stamp mark, and footer/section texture
+
+This task goes louder than a typical "add one accent" pass — it amplifies
+the hero specifically: a hard comic-shadow on the headline, denser
+halftone plus a vignette, and a stat callout panel showing the real
+18–19Ah/20Ah test numbers as the visual centerpiece. Still inside the
+established boundary: original CSS/SVG only, no franchise name/logo/asset,
+no comic styling on text that needs to stay plainly legible (the stat
+panel's numbers are NOT skewed, only the panel's background/label are —
+see Step 2).
 
 **Files:**
 - Create: `images/placeholders/inspection-stamp.svg`
-- Modify: `css/style.css` (hero tagline style, footer texture, section-accent/stamp styles)
-- Modify: `index.html` (insert hero tagline line)
+- Modify: `css/style.css` (hero tagline, amplified hero background, stat callout panel, bigger button hover, footer texture, section-accent/stamp styles)
+- Modify: `index.html` (insert hero tagline line and stat callout panel)
 
 **Interfaces:**
 - Consumes: nothing new
-- Produces: `images/placeholders/inspection-stamp.svg` file path (used by About page in Task 5); CSS classes `.hero__tagline`, `.section-accent`, `.stamp-mark`
+- Produces: `images/placeholders/inspection-stamp.svg` file path (used by About page in Task 5); CSS classes `.hero__tagline`, `.hero__stat`, `.hero__stat-label`, `.hero__stat-number`, `.hero__stat-sub`, `.section-accent`, `.stamp-mark`
 
 - [ ] **Step 1: Create `images/placeholders/inspection-stamp.svg`**
 
@@ -401,16 +416,58 @@ git commit -m "Add brand tagline to header on Home, Shop, and Contact pages"
 </svg>
 ```
 
-- [ ] **Step 2: Append hero tagline, footer texture, and section-accent styles to `css/style.css`**
+- [ ] **Step 2: Amplify the hero, add the stat panel, and append footer/section-accent styles to `css/style.css`**
 
 Find:
 ```css
+.hero {
+  position: relative;
+  padding: var(--space-xl) 0 calc(var(--space-xl) + 28px);
+  background-image: repeating-radial-gradient(circle at 0 0, rgba(242, 135, 27, 0.08) 0, rgba(242, 135, 27, 0.08) 1px, transparent 1px, transparent 14px);
+  background-size: 14px 14px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 0 100%);
+}
 .hero h1 { font-size: 2.75rem; max-width: 42ch; margin-top: var(--space-xs); }
 ```
 
 Replace with:
 ```css
-.hero h1 { font-size: 2.75rem; max-width: 42ch; margin-top: var(--space-xs); }
+.hero {
+  position: relative;
+  padding: var(--space-xl) 0 calc(var(--space-xl) + 28px);
+  background-image:
+    repeating-radial-gradient(circle at 0 0, rgba(242, 135, 27, 0.12) 0, rgba(242, 135, 27, 0.12) 1.5px, transparent 1.5px, transparent 10px),
+    radial-gradient(circle at 50% 30%, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.45) 100%);
+  background-size: 10px 10px, 100% 100%;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 28px), 0 100%);
+}
+.hero h1 { font-size: 2.75rem; max-width: 42ch; margin-top: var(--space-xs); text-shadow: 4px 4px 0 var(--color-border-ink); }
+.hero__stat { display: inline-flex; flex-direction: column; align-items: flex-start; gap: 0.1rem; margin-top: var(--space-md); padding: var(--space-sm) var(--space-md); background-color: var(--color-surface); border: 2px solid var(--color-border-ink); box-shadow: 3px 3px 0 var(--color-border-ink); transform: skewX(-4deg); }
+.hero__stat-label { display: block; font-family: var(--font-heading); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-text-muted); transform: skewX(4deg); }
+.hero__stat-number { display: block; font-family: var(--font-display); font-size: 2rem; color: var(--color-accent); line-height: 1; transform: skewX(4deg); }
+.hero__stat-sub { display: block; font-family: var(--font-body); font-size: 0.75rem; color: var(--color-text-muted); transform: skewX(4deg); }
+```
+
+Find:
+```css
+.button:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--color-border-ink); text-decoration: none; }
+```
+
+Replace with:
+```css
+.button:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--color-border-ink); text-decoration: none; }
+```
+
+Find:
+```css
+.hero__subhead { max-width: 60ch; color: var(--color-text-muted); font-size: 1.1rem; }
+.hero__actions { display: flex; gap: var(--space-sm); margin-top: var(--space-md); flex-wrap: wrap; }
+```
+
+Replace with:
+```css
+.hero__subhead { max-width: 60ch; color: var(--color-text-muted); font-size: 1.1rem; }
+.hero__actions { display: flex; gap: var(--space-sm); margin-top: var(--space-md); flex-wrap: wrap; }
 .hero__tagline { font-family: var(--font-heading); font-size: 1.1rem; font-weight: 600; color: var(--color-accent); text-transform: uppercase; letter-spacing: 0.02em; margin: 0 0 var(--space-sm); }
 ```
 
@@ -459,19 +516,34 @@ Replace with:
 }
 ```
 
-- [ ] **Step 3: Insert the hero tagline in `index.html`**
+- [ ] **Step 3: Insert the hero tagline and stat callout panel in `index.html`**
 
 Find:
 ```html
       <p class="eyebrow">Salvaged &middot; Graded &middot; Solar-Ready</p>
       <h1>Reclaimed EV &amp; Transit Battery Modules. Tested Where Marked. Ready for Your Solar Storage Build.</h1>
+      <p class="hero__subhead">We salvage, test, and grade battery modules pulled from retired transit buses and EVs — including TTC buses, Nissan Leafs, and Chevy Volts — so you can build a reliable DIY powerwall for a fraction of the cost of new cells.</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="shop.html">Browse the Shop</a>
+        <a class="button button--secondary" href="contact.html">Ask a Question</a>
+      </div>
 ```
 
 Replace with:
 ```html
       <p class="eyebrow">Salvaged &middot; Graded &middot; Solar-Ready</p>
-      <p class="hero__tagline">Salvaged Power. Built to Last.</p>
+      <p class="hero__tagline">Dead Buses. Live Cells.</p>
       <h1>Reclaimed EV &amp; Transit Battery Modules. Tested Where Marked. Ready for Your Solar Storage Build.</h1>
+      <p class="hero__subhead">We salvage, test, and grade battery modules pulled from retired transit buses and EVs — including TTC buses, Nissan Leafs, and Chevy Volts — so you can build a reliable DIY powerwall for a fraction of the cost of new cells.</p>
+      <div class="hero__actions">
+        <a class="button button--primary" href="shop.html">Browse the Shop</a>
+        <a class="button button--secondary" href="contact.html">Ask a Question</a>
+      </div>
+      <div class="hero__stat">
+        <span class="hero__stat-label">Tested Capacity</span>
+        <span class="hero__stat-number">18&ndash;19Ah</span>
+        <span class="hero__stat-sub">measured against a 20Ah original rating</span>
+      </div>
 ```
 
 - [ ] **Step 4: Verify**
@@ -480,22 +552,27 @@ Run:
 ```bash
 python3 -c "import xml.dom.minidom as m; m.parse('images/placeholders/inspection-stamp.svg')" && echo "stamp SVG OK"
 grep -c "hero__tagline" index.html css/style.css
+grep -c "hero__stat" index.html css/style.css
+grep -c "text-shadow" css/style.css
 grep -c "section-accent\|stamp-mark" css/style.css
 ```
-Expected:
+Expected (with multiple file arguments, `grep -c` prefixes each line with the filename):
 ```
 stamp SVG OK
-1
+index.html:1
+css/style.css:1
+index.html:4
+css/style.css:4
 1
 4
 ```
-(Last line: 4 lines contain `section-accent` or `stamp-mark` — the `.section-accent` rule, the `.section-accent > div` rule, the `.stamp-mark` rule, and the `.section-accent` override inside the mobile media query.)
+(`hero__tagline`: one line in each file. `hero__stat`: 4 lines in `index.html` — the wrapping `<div class="hero__stat">` plus the 3 inner `hero__stat-label`/`hero__stat-number`/`hero__stat-sub` spans — and 4 rule lines in `css/style.css` — `.hero__stat`, `.hero__stat-label`, `.hero__stat-number`, `.hero__stat-sub`. `text-shadow`: exactly 1 declaration, on `.hero h1`. `section-accent`/`stamp-mark`: 4 lines total, single-file so no filename prefix.)
 
 - [ ] **Step 5: Commit**
 
 ```bash
 git add images/placeholders/inspection-stamp.svg css/style.css index.html
-git commit -m "Add hero tagline, inspection-stamp mark, and footer/section texture"
+git commit -m "Amplify hero with comic-shadow headline, stat callout panel, and new slogan"
 ```
 
 ---
@@ -532,7 +609,7 @@ git commit -m "Add hero tagline, inspection-stamp mark, and footer/section textu
         <img class="brand__mark" src="images/placeholders/brand-mark.svg" alt="" width="28" height="28">
         <span class="brand__text">
           <span class="brand__name">York Region Battery</span>
-          <span class="brand__tagline">Salvaged Power. Built to Last.</span>
+          <span class="brand__tagline">Dead Buses. Live Cells.</span>
         </span>
       </a>
       <nav class="site-nav" aria-label="Primary">
@@ -621,7 +698,7 @@ git commit -m "Add A123/TTC provenance content and inspection-stamp mark to Abou
 
 - [ ] **Step 1: Start the preview server and check the header/hero on every page**
 
-Use `preview_start` with name `york-region-battery-static`, then check `/`, `/shop.html`, `/about.html`, `/contact.html`. Confirm: the tagline "Salvaged Power. Built to Last." appears under the wordmark in the header on all 4 pages; the hero on `/` shows the tagline line between the eyebrow and the big headline; neither looks visually broken or overlapping.
+Use `preview_start` with name `york-region-battery-static`, then check `/`, `/shop.html`, `/about.html`, `/contact.html`. Confirm: the tagline "Dead Buses. Live Cells." appears under the wordmark in the header on all 4 pages; the hero on `/` shows the tagline line between the eyebrow and the big headline; neither looks visually broken or overlapping.
 
 - [ ] **Step 2: Verify the real photos render correctly**
 

@@ -131,9 +131,26 @@ placeholders, no photos exist for them yet.
 
 ## Brand Flair
 
-- **Tagline:** "Salvaged Power. Built to Last." — added under the wordmark
-  in the header (`.brand`) and repeated once in the hero as a secondary
-  line under the eyebrow label.
+- **Tagline:** "Dead Buses. Live Cells." — added under the wordmark in the
+  header (`.brand`) and repeated once in the hero under the eyebrow label.
+  Punchier and more memorable than a generic durability line, and it's
+  literally true: retired transit buses, cells that still test well. Not a
+  trademarked phrase, not referencing any media property — original copy.
+- **Hero, amplified:** this pass goes louder than the original redesign's
+  restrained hero treatment, while staying inside the same "inspired by,
+  not copied" boundary (no franchise name, logo, or asset — just a bolder
+  execution of the existing original comic-industrial style):
+  - The H1 headline gets a hard comic-shadow (`text-shadow`, same hard
+    offset already used on buttons/badges) for a comic-poster title look.
+  - Denser halftone texture plus a subtle dark vignette gradient behind the
+    hero for more depth than the current flat/light dot pattern.
+  - A bold "TESTED CAPACITY" stat callout panel in the hero — "18–19Ah"
+    tested against "20Ah rated" — styled like a comic info-panel (ink
+    outline, skewed tag, matching the badge treatment). Real measured data
+    as the visual centerpiece, not an empty marketing graphic — ties the
+    loud visual style directly back to the honesty principle the rest of
+    the site is built on.
+  - Buttons get a bigger, more dramatic hover lift.
 - **Inspection-stamp mark:** a new circular SVG badge — battery+bolt icon
   center, "YORK REGION BATTERY" arced around the top, "SALVAGED · GRADED"
   arced around the bottom — styled with the same ink-outline treatment as
@@ -143,8 +160,8 @@ placeholders, no photos exist for them yet.
 - **Texture expansion:** reuse the existing halftone dot pattern (already
   defined for `.hero`) as a thin strip along the top edge of the footer,
   and add one more angled `clip-path` divider between two sections on the
-  About page — same restrained dose as the original hero treatment, not a
-  new pattern.
+  About page — same restrained dose as the original hero treatment
+  elsewhere on the site, even though the hero itself is going louder.
 
 ## New About-Page Content
 
