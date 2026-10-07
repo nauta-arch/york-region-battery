@@ -75,6 +75,19 @@ p { margin: 0 0 var(--space-sm); }
 .badge--tested { background-color: var(--color-badge-tested-bg); color: var(--color-badge-tested-text); }
 .badge--asis { background-color: var(--color-badge-asis-bg); color: var(--color-badge-asis-text); }
 
+/* ---------- Catalog Grid & Cards ---------- */
+.catalog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: var(--space-md); margin-top: var(--space-lg); }
+.listing-card { background-color: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; }
+.listing-card__image { width: 100%; height: 160px; object-fit: contain; background-color: var(--color-surface-alt); padding: var(--space-md); }
+.listing-card__body { padding: var(--space-md); display: flex; flex-direction: column; gap: var(--space-xs); }
+.listing-card__title { font-size: 1.05rem; margin: var(--space-xs) 0 0; }
+.listing-card__price { color: var(--color-text-muted); font-weight: 600; margin: 0; }
+.listing-card__specs { width: 100%; border-collapse: collapse; font-size: 0.85rem; margin: var(--space-xs) 0; }
+.listing-card__specs th { text-align: left; color: var(--color-text-muted); font-weight: 500; padding: 0.2rem 0.5rem 0.2rem 0; vertical-align: top; white-space: nowrap; }
+.listing-card__specs td { padding: 0.2rem 0; }
+.listing-card__description { font-size: 0.9rem; color: var(--color-text-muted); }
+.listing-card__actions { display: flex; gap: var(--space-xs); margin-top: var(--space-xs); flex-wrap: wrap; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .site-header__inner { flex-direction: column; align-items: flex-start; gap: var(--space-xs); }
